@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'website',
+    'accounts',
 ]
 
 MIDDLEWARE = [
@@ -82,6 +83,7 @@ DATABASES = {
 }
 
 
+AUTH_USER_MODEL = "accounts.GFG" #phoneauthentication in accounts
 
 
 
