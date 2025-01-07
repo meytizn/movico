@@ -6,7 +6,21 @@
 
 {% block content %}
 
-Movie app is here ... 
+
+
+
+
+{% for movie in movies %}
+
+<img src="{{movie.poster.url}}"/>
+
+
+{% endfor %}
+
+
+
+
+
 
 {% endblock content %}
 
