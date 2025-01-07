@@ -1,0 +1,49 @@
+body{
+  margin: 0px;
+  padding: 0px;
+}
+
+
+
+.navbar{
+  width:100%;
+  height:85px ; 
+  background-color:black ;
+   text-align:center;
+   padding-top:12px;
+    color:white;
+    font-size:40px 
+}
+
+
+
+
+.movie_card{
+  width:350px;
+  height: 600px;background-color: black;border-radius: 10px; color:white;position: relative;
+}
+
+
+.movie_card img{
+  width:100%;
+  height: 480px; }
+
+.movie_card h1{
+  font-size:40px;
+  text-align: center;
+}
+
+.movie_card h3{
+ 
+  text-align: left;
+  color:yellow;
+  padding-left: 16%;
+  /* position: absolute ;bottom: 5px;left: 10px; */
+}
+
+.movie_card h4{
+  
+  text-align: left;
+  padding-left: 16%;color:red;
+  /* position: absolute ;bottom: 5px;right: 10px; */
+}
