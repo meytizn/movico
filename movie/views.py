@@ -23,3 +23,36 @@ def movie_list_api(request):
   moives=Movie.objects.all()
   movies_serilazer=MovieSerializer(moives,many=True)
   return Response(movies_serilazer.data)
+
+
+@api_view(["GET"])
+def movie_detail_api(request,pk):
+  movie=Movie.objects.get(id=pk)
+  movie_serializer=MovieSerializer(movie,many=False)
+  return Response(movie_serializer.data)
+
+
+@api_view(["POST"])
+def movie_create_api(request):
+  movie_post=MovieSerializer(data=request.data)
+  if movie_post.is_valid():
+    movie_post.save()
+  return Response(movie_post.data)
+
+
+
+@api_view(["POST"])
+def movie_update_api(request,pk):
+  instance=Movie.objects.get(id=pk)
+  movie_post=MovieSerializer(instance,data=request.data)
+  if movie_post.is_valid():
+    movie_post.save()
+  return Response(movie_post.data)  
+
+
+
+@api_view(["DELETE"])
+def movie_delete_api(request,pk):
+  movie=Movie.objects.get(id=pk)
+  movie.delete()
+  return Response("movie deleted successfully ")
