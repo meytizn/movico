@@ -1,8 +1,32 @@
 {% extends "base.html" %}
 {% load static %}
+
+
+{% block title %}Movie List {% endblock title %}
+
 {% block content %}
 
-Movie app is here ... 
+
+
+
+
+{% for movie in movies %}
+<a href="{% url "movie:detail" movie.pk %}">
+<div class="movie_card">
+<img src="{{movie.poster.url}}"/>
+<h1>{{movie.title}}</h1>
+{% comment %} <h2>{{movie.description}}</h2> {% endcomment %}
+<h3>Imdb : &nbsp&nbsp&nbsp{{movie.imdb_score}}</h3>
+<h4>Genre :{% for g in movie.genre.all %}&nbsp&nbsp&nbsp {{g.title}} &nbsp&nbsp{% endfor %}</h4>
+</div>
+
+</a>
+{% endfor %}
+
+
+
+
+
 
 {% endblock content %}
 
