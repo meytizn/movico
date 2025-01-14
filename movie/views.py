@@ -36,8 +36,10 @@ def movie_detail_api(request,pk):
   return Response(movie_serializer.data)
 
 
+from django.views.decorators.csrf import csrf_exempt
 
 @api_view(["POST"])
+@csrf_exempt
 def movie_create_api(request):
   movie_post=MovieSerializer(data=request.data)
   if movie_post.is_valid():
