@@ -42,6 +42,24 @@ INSTALLED_APPS = [
     'accounts',
     'movie',
 ]
+# Rest config classes must be added 
+REST_FRAMEWORK = {
+  
+    "DEFAULT_PERMISSION_CLASSES": [
+      #AllowAny makes default permision class is_authenticated inactive or the same unrestricted for production 
+        "rest_framework.permissions.AllowAny",  
+    ], 
+
+    # "DEFAULT_AUTHENTICATION_CLASSES": [
+    #   "rest_framework.authentication.SessionAuthentication",
+    #   "rest_framework.authentication.TokenAuthentication",
+    # ],
+
+    # 'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema', # drf_spectacular setting
+   
+}
+
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -83,6 +101,8 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+
+
 
 
 AUTH_USER_MODEL = "accounts.GFG" #phoneauthentication in accounts
